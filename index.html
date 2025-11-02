@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CCNA Prep Quiz</title>
+  <title>CCNA Quiz Pro</title>
   <meta name="description" content="Teste seus conhecimentos para a certificação CCNA com este quiz interativo." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
@@ -12,25 +12,11 @@
   <div class="app">
     <header>
       <div class="mode-header">
-        <span class="mode-indicator" id="modeIndicator">Modo: <strong>Quiz</strong></span>
-      </div>
-      <div class="controls" role="group" aria-label="Controles do Quiz">
-        <button id="btnQuiz" class="btn-ghost" aria-pressed="true" tabindex="0">Quiz</button>
-        <button id="btnSimulado" class="btn-ghost" aria-pressed="false" tabindex="0">Simulado</button>
-        <label for="categorySelect" class="small">Categorias:</label>
-        <select id="categorySelect">
-          <option value="all">Todas</option>
-        </select>
+        <span class="mode-indicator">Modo: <strong>Quiz</strong></span>
       </div>
     </header>
 
-    <div class="actions-inline" id="actionsInline">
-      <button id="restartBtn" class="btn-ghost" aria-label="Reiniciar quiz">Reiniciar</button>
-      <div class="timer-box">
-        <span class="small">Tempo:</span>
-        <span class="timer" id="timerDisplay" aria-live="polite">--:--:--</span>
-      </div>
-    </div>
+    <!-- REMOVIDO: actions-inline (Reiniciar + Timer) -->
 
     <div class="stats-inline" id="statsInline" role="region" aria-label="Estatísticas do quiz">
       <span><strong>Perguntas:</strong> <span id="totalAsked">0</span></span>
@@ -61,7 +47,6 @@
 
     <footer>
       <div>
-        Observação: Configure as variáveis no arquivo <code>config.js</code> para carregar perguntas.<br>
         <span class="visually-hidden" id="accessibilityStatus" aria-live="assertive"></span>
       </div>
     </footer>
@@ -73,5 +58,13 @@
 
   <script src="js/config.js" defer></script>
   <script src="js/script.js" defer></script>
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('copy', e => {
+      e.preventDefault();
+      alert('A cópia de conteúdo está desativada.');
+    });
+  </script>
 </body>
 </html>
