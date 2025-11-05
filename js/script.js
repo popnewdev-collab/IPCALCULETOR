@@ -29,10 +29,10 @@ function applyCardTheme() {
     const icon = document.getElementById('themeIcon');
     if (cardTheme === 'light') {
         card.classList.add('theme-light');
-        icon.textContent = 'Tema Escuro';
+        icon.textContent = 'dark theme';
     } else {
         card.classList.remove('theme-light');
-        icon.textContent = 'Tema Claro';
+        icon.textContent = 'clear theme';
     }
 }
 
@@ -149,7 +149,7 @@ function validateAnswer(selected) {
         }
         updateReviewButton();
     };
-    flagBtn.textContent = flaggedQuestions.has(current.id) ? 'Doubt Marked' : 'Doubts';
+    flagBtn.textContent = flaggedQuestions.has(current.id) ? 'Doubt Marked' : 'Doubt';
     flagBtn.className = 'btn-ghost' + (flaggedQuestions.has(current.id) ? ' flagged' : '');
 
     expl.style.display = 'none';
