@@ -140,16 +140,16 @@ function validateAnswer(selected) {
     flagBtn.onclick = () => {
         if (flaggedQuestions.has(current.id)) {
             flaggedQuestions.delete(current.id);
-            flagBtn.textContent = 'Doubts';
+            flagBtn.textContent = 'Doubt';
             flagBtn.classList.remove('flagged');
         } else {
             flaggedQuestions.add(current.id);
-            flagBtn.textContent = 'Marked Question';
+            flagBtn.textContent = 'Doubt Marked';
             flagBtn.classList.add('flagged');
         }
         updateReviewButton();
     };
-    flagBtn.textContent = flaggedQuestions.has(current.id) ? 'Marked Question' : 'Doubts';
+    flagBtn.textContent = flaggedQuestions.has(current.id) ? 'Doubt Marked' : 'Doubts';
     flagBtn.className = 'btn-ghost' + (flaggedQuestions.has(current.id) ? ' flagged' : '');
 
     expl.style.display = 'none';
