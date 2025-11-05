@@ -29,10 +29,10 @@ function applyCardTheme() {
     const icon = document.getElementById('themeIcon');
     if (cardTheme === 'light') {
         card.classList.add('theme-light');
-        icon.textContent = 'dark theme';
+        icon.textContent = 'Dark theme';
     } else {
         card.classList.remove('theme-light');
-        icon.textContent = 'clear theme';
+        icon.textContent = 'Clear theme';
     }
 }
 
@@ -77,7 +77,7 @@ function renderQuestion(q) {
     current = q;
     document.getElementById('qMeta').innerHTML = `ID ${q.id} — ${escapeHTML(q.category)}`;
     if (flaggedQuestions.has(q.id)) {
-        document.getElementById('qMeta').innerHTML += ' <span style="color:var(--accent); font-weight:700;">(Doubts)</span>';
+        document.getElementById('qMeta').innerHTML += ' <span style="color:var(--accent); font-weight:700;">(Doubt)</span>';
     }
     document.getElementById('questionText').textContent = q.question;
     const opts = document.getElementById('options');
