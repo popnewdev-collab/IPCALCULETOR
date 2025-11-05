@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CCNA Quiz Pro</title>
-  <meta name="description" content="Teste seus conhecimentos para a certificação CCNA com este quiz interativo." />
+  <meta name="description" content="Test your CCNA certification knowledge with this interactive quiz." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,23 +12,23 @@
   <div class="app">
     <header>
       <div class="mode-header">
-        <span class="mode-indicator">Modo: <strong>Quiz</strong></span>
+        <span class="mode-indicator">Mode: <strong>Quiz</strong></span>
         
-        <button id="themeToggle" class="btn-ghost" style="margin-left: auto; font-size: 0.875rem;" aria-label="Alternar tema do card">
-          <span id="themeIcon">Tema Claro</span>
+        <button id="themeToggle" class="btn-ghost" style="margin-left: auto; font-size: 0.875rem;" aria-label="Toggle card theme">
+          <span id="themeIcon">Light Theme</span>
         </button>
 
-        <button id="reviewBtn" class="btn-ghost" style="display: none; font-size: 0.875rem;" aria-label="Revisar dúvidas marcadas">
-          Revisar Dúvidas (<span id="flagCount">0</span>)
+        <button id="reviewBtn" class="btn-ghost" style="display: none; font-size: 0.875rem;" aria-label="Review flagged questions">
+          Review Flagged (<span id="flagCount">0</span>)
         </button>
       </div>
     </header>
 
-    <div class="stats-inline" id="statsInline" role="region" aria-label="Estatísticas do quiz">
-      <span><strong>Perguntas:</strong> <span id="totalAsked">0</span></span>
-      <span><strong>Acertos:</strong> <span id="totalCorrect">0</span></span>
-      <span><strong>Erros:</strong> <span id="totalWrong">0</span></span>
-      <span><strong>Progresso:</strong> <span id="progress">0%</span></span>
+    <div class="stats-inline" id="statsInline" role="region" aria-label="Quiz statistics">
+      <span><strong>Questions:</strong> <span id="totalAsked">0</span></span>
+      <span><strong>Correct:</strong> <span id="totalCorrect">0</span></span>
+      <span><strong>Wrong:</strong> <span id="totalWrong">0</span></span>
+      <span><strong>Progress:</strong> <span id="progress">0%</span></span>
     </div>
 
     <main>
@@ -36,20 +36,20 @@
         <div class="card" id="questionCard" tabindex="0">
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <div class="question-num" id="qMeta" aria-live="polite">Carregando perguntas...</div>
+              <div class="question-num" id="qMeta" aria-live="polite">Loading questions...</div>
               <div class="question-text" id="questionText">—</div>
-              <img id="questionImage" class="question-image" src="" alt="Imagem da pergunta" style="display: none;">
+              <img id="questionImage" class="question-image" src="" alt="Question image" style="display: none;">
             </div>
           </div>
-          <div class="options" id="options" role="group" aria-label="Alternativas"></div>
+          <div class="options" id="options" role="group" aria-label="Answer choices"></div>
           <div id="explanation" class="explanation" style="display: none;"></div>
           <div style="display: flex; justify-content: space-between; margin-top: 0.875rem; gap: 0.5rem; align-items: center;">
-            <div class="hint">Selecione as alternativas corretas. A validação é automática.</div>
+            <div class="hint">Select the correct answers. Validation is automatic.</div>
             <div style="display: flex; gap: 0.5rem; align-items: center;">
-              <button id="flagBtn" class="btn-ghost" style="display: none; font-size: 0.875rem;" aria-label="Marcar como dúvida">
-                Dúvida
+              <button id="flagBtn" class="btn-ghost" style="display: none; font-size: 0.875rem;" aria-label="Flag as doubt">
+                Flag
               </button>
-              <button id="nextBtn" class="btn-primary" aria-label="Próxima pergunta" tabindex="0">Próxima</button>
+              <button id="nextBtn" class="btn-primary" aria-label="Next question" tabindex="0">Next</button>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@
     </footer>
 
     <div class="final-score-modal" id="finalScoreModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
-      <!-- Conteúdo gerado dinamicamente -->
+      <!-- Content generated dynamically -->
     </div>
   </div>
 
@@ -74,7 +74,7 @@
     document.addEventListener('selectstart', e => e.preventDefault());
     document.addEventListener('copy', e => {
       e.preventDefault();
-      alert('A cópia de conteúdo está desativada.');
+      alert('Copying content is disabled.');
     });
   </script>
 </body>
