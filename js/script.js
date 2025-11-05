@@ -56,7 +56,7 @@ async function loadSheet() {
             correct: (r.correct || '').replace(/\s/g, '').split(',').filter(Boolean).map(s => s.toUpperCase()),
             explanation: (r.explanation || '').trim(),
             image: (r.image || '').trim(),
-            category: (r.category || 'Geral').trim()
+            category: (r.category || 'Quiz').trim()
         })).filter(q => q.question && Object.values(q.options).some(Boolean));
         if (allQuestions.length === 0) {
             document.getElementById('qMeta').textContent = 'Nenhuma pergunta na aba "subnets".';
