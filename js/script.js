@@ -77,7 +77,7 @@ function renderQuestion(q) {
     current = q;
     document.getElementById('qMeta').innerHTML = `ID ${q.id} — ${escapeHTML(q.category)}`;
     if (flaggedQuestions.has(q.id)) {
-        document.getElementById('qMeta').innerHTML += ' <span style="color:var(--accent); font-weight:700;">(Dúvida)</span>';
+        document.getElementById('qMeta').innerHTML += ' <span style="color:var(--accent); font-weight:700;">(Doubts)</span>';
     }
     document.getElementById('questionText').textContent = q.question;
     const opts = document.getElementById('options');
@@ -140,16 +140,16 @@ function validateAnswer(selected) {
     flagBtn.onclick = () => {
         if (flaggedQuestions.has(current.id)) {
             flaggedQuestions.delete(current.id);
-            flagBtn.textContent = 'Dúvida';
+            flagBtn.textContent = 'Doubts';
             flagBtn.classList.remove('flagged');
         } else {
             flaggedQuestions.add(current.id);
-            flagBtn.textContent = 'Dúvida Marcada';
+            flagBtn.textContent = 'Marked Question';
             flagBtn.classList.add('flagged');
         }
         updateReviewButton();
     };
-    flagBtn.textContent = flaggedQuestions.has(current.id) ? 'Dúvida Marcada' : 'Dúvida';
+    flagBtn.textContent = flaggedQuestions.has(current.id) ? 'Marked Question' : 'Doubts';
     flagBtn.className = 'btn-ghost' + (flaggedQuestions.has(current.id) ? ' flagged' : '');
 
     expl.style.display = 'none';
