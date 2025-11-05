@@ -20,7 +20,6 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
 html, body {
   height: 100%;
   margin: 0;
@@ -30,7 +29,6 @@ html, body {
   background: linear-gradient(180deg, #071028 0%, #08122a 100%);
   line-height: 1.5;
 }
-
 body {
   padding: 1rem;
   min-height: 100vh;
@@ -41,7 +39,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .app {
   max-width: 980px;
   width: 100%;
@@ -52,12 +49,15 @@ body {
 header {
   margin-bottom: 1rem;
 }
-
 .mode-header {
   margin-bottom: 0.5rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-
 .mode-indicator {
   padding: 0.5rem 0.875rem;
   border-radius: var(--radius);
@@ -84,21 +84,18 @@ button, select {
   cursor: pointer;
   font-size: 0.95rem;
 }
-
 button:hover, select:hover {
   border-color: var(--accent);
   background: linear-gradient(180deg, #0d1f2e, #08121c);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(14,165,164,0.2);
 }
-
 button:focus-visible, select:focus-visible {
   border-color: var(--focus);
   box-shadow: 0 0 0 3px rgba(251,191,36,0.3);
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
-
 .btn-primary {
   background: linear-gradient(180deg, var(--accent), #0a8a89);
   color: #042022;
@@ -106,66 +103,22 @@ button:focus-visible, select:focus-visible {
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(14,165,164,0.3);
 }
-
 .btn-primary:hover {
   background: linear-gradient(180deg, var(--accent-hover), #0a9a99);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(14,165,164,0.4);
 }
-
 .btn-primary:active {
   transform: translateY(0);
 }
-
 .btn-ghost {
   background: transparent;
   border: 1px solid rgba(255,255,255,.15);
   font-weight: 600;
 }
-
 .btn-ghost:hover {
   background: rgba(255,255,255,0.08);
   border-color: var(--accent);
-}
-
-/* === Ações Inline === */
-.actions-inline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(255,255,255,0.04);
-  border-radius: var(--radius);
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 0.875rem;
-  flex-wrap: wrap;
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--border);
-}
-
-.timer-box {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(14,165,164,0.1);
-  border: 1px solid rgba(14,165,164,0.2);
-  border-radius: var(--radius);
-  padding: 0.5rem 1rem;
-  min-width: 140px;
-  justify-content: center;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-.timer {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(14,165,164,0.4);
 }
 
 /* === Estatísticas Inline === */
@@ -183,13 +136,11 @@ button:focus-visible, select:focus-visible {
   border: 1px solid var(--border);
   backdrop-filter: blur(4px);
 }
-
 .stats-inline span {
   color: var(--muted);
   white-space: nowrap;
   font-weight: 500;
 }
-
 .stats-inline strong {
   color: var(--text-primary);
   font-weight: 700;
@@ -202,7 +153,6 @@ main {
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-
 .card {
   background: rgba(255,255,255,0.05);
   padding: 1.25rem;
@@ -212,26 +162,22 @@ main {
   border: 1px solid var(--border);
   backdrop-filter: blur(6px);
 }
-
 .card:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
 }
-
 .question-num {
   font-size: 0.925rem;
   color: var(--muted);
   font-weight: 600;
   letter-spacing: 0.5px;
 }
-
 .question-text {
   font-size: 1.15rem;
   margin: 0.75rem 0;
   font-weight: 600;
   line-height: 1.4;
 }
-
 .question-image {
   max-width: 100%;
   border-radius: 0.625rem;
@@ -245,7 +191,6 @@ main {
   gap: 0.75rem;
   margin-top: 0.75rem;
 }
-
 .opt {
   display: flex;
   align-items: center;
@@ -261,20 +206,16 @@ main {
   text-align: left;
   backdrop-filter: blur(2px);
 }
-
 .opt:hover {
   border-color: var(--accent);
   background: rgba(14,165,164,0.08);
   transform: translateX(4px);
 }
-
 .opt:focus-visible {
   border-color: var(--focus);
   box-shadow: 0 0 0 3px rgba(251,191,36,0.3);
   outline: none;
 }
-
-/* Destaque só ao selecionar (conforme seu pedido) */
 .opt[aria-pressed="true"]:not(.opt-disabled) {
   border-color: var(--focus) !important;
   background: rgba(251, 191, 36, 0.15) !important;
@@ -282,13 +223,11 @@ main {
   transform: scale(1.02);
   font-weight: 700;
 }
-
 .opt.opt-disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
-
 .opt .letter {
   min-width: 38px;
   height: 38px;
@@ -300,31 +239,26 @@ main {
   font-size: 1.2em;
   border: 1px solid var(--border);
 }
-
 .opt.correct {
   border-color: rgba(22,163,74,.8) !important;
   background: linear-gradient(90deg, rgba(16,185,129,0.12), rgba(16,185,129,0.06)) !important;
   animation: correctPulse 0.6s ease;
 }
-
 .opt.wrong {
   border-color: rgba(239,68,68,.6) !important;
   background: linear-gradient(90deg, rgba(239,68,68,0.1), rgba(239,68,68,0.02)) !important;
   animation: wrongShake 0.5s ease;
 }
-
 @keyframes correctPulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
 @keyframes wrongShake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-6px); }
   75% { transform: translateX(6px); }
 }
-
 .explanation {
   margin-top: 1rem;
   padding: 1rem;
@@ -336,7 +270,6 @@ main {
   animation: fadeIn 0.4s ease-out;
   border: 1px solid var(--border);
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -349,7 +282,6 @@ main {
   font-style: italic;
   opacity: 0.9;
 }
-
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -376,17 +308,14 @@ main {
   box-shadow: var(--shadow-hover);
   animation: toastIn 0.4s ease-out;
 }
-
 .correct-message {
   background: var(--success);
   color: white;
 }
-
 .error-message {
   background: var(--danger);
   color: white;
 }
-
 @keyframes toastIn {
   from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -396,10 +325,62 @@ main {
 @media (max-width: 700px) {
   body { padding: 0.75rem; }
   .mode-indicator { font-size: 0.9rem; padding: 0.4rem 0.7rem; }
-  .actions-inline, .stats-inline { padding: 0.5rem; gap: 0.5rem; font-size: 0.85rem; }
-  .timer { font-size: 1rem; }
+  .stats-inline { padding: 0.5rem; gap: 0.5rem; font-size: 0.85rem; }
   .question-text { font-size: 1.05rem; }
   .opt { padding: 0.875rem 0.75rem; font-size: 0.975rem; }
   .opt .letter { min-width: 34px; height: 34px; font-size: 1.1em; }
   .btn-primary, button { padding: 0.625rem 0.875rem; font-size: 0.9rem; }
+}
+
+/* === TEMA CLARO DO CARD === */
+.card.theme-light {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.1) !important;
+}
+.card.theme-light .question-num {
+  color: #64748b !important;
+}
+.card.theme-light .question-text {
+  color: #1e293b !important;
+}
+.card.theme-light .opt {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+.card.theme-light .opt:hover {
+  background: #f1f5f9 !important;
+  border-color: #0ea5a4 !important;
+}
+.card.theme-light .opt.correct {
+  background: linear-gradient(90deg, rgba(16,185,129,0.15), rgba(16,185,129,0.05)) !important;
+  border-color: #16a34a !important;
+}
+.card.theme-light .opt.wrong {
+  background: linear-gradient(90deg, rgba(239,68,68,0.12), rgba(239,68,68,0.03)) !important;
+  border-color: #ef4444 !important;
+}
+.card.theme-light .explanation {
+  background: #f8fafc !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+.card.theme-light .hint {
+  color: #64748b !important;
+}
+
+/* === Botão de Dúvida Marcada === */
+#flagBtn.flagged {
+  background: linear-gradient(180deg, #fff3cd, #ffeaa7) !important;
+  color: #856404 !important;
+  border-color: #ffeaa7 !important;
+  font-weight: 700;
+  animation: flagPulse 0.6s ease;
+}
+@keyframes flagPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
