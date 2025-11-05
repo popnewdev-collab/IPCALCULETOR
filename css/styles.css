@@ -50,14 +50,22 @@ header {
   margin-bottom: 1rem;
 }
 .mode-header {
-  margin-bottom: 0.5rem;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  overflow-x: auto;
+  padding: 0 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.mode-header::-webkit-scrollbar {
+  display: none;
+}
+
 .mode-indicator {
   padding: 0.5rem 0.875rem;
   border-radius: var(--radius);
@@ -68,6 +76,16 @@ header {
   backdrop-filter: blur(4px);
   border: 1px solid var(--border);
   box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Botões do header (tema e revisão) */
+.mode-header button {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
 }
 
 /* === Controles e Botões === */
@@ -324,12 +342,31 @@ main {
 /* === Responsividade === */
 @media (max-width: 700px) {
   body { padding: 0.75rem; }
-  .mode-indicator { font-size: 0.9rem; padding: 0.4rem 0.7rem; }
-  .stats-inline { padding: 0.5rem; gap: 0.5rem; font-size: 0.85rem; }
-  .question-text { font-size: 1.05rem; }
-  .opt { padding: 0.875rem 0.75rem; font-size: 0.975rem; }
-  .opt .letter { min-width: 34px; height: 34px; font-size: 1.1em; }
-  .btn-primary, button { padding: 0.625rem 0.875rem; font-size: 0.9rem; }
+  .mode-indicator { 
+    font-size: 0.9rem; 
+    padding: 0.4rem 0.7rem; 
+  }
+  .stats-inline { 
+    padding: 0.5rem; 
+    gap: 0.5rem; 
+    font-size: 0.85rem; 
+  }
+  .question-text { 
+    font-size: 1.05rem; 
+  }
+  .opt { 
+    padding: 0.875rem 0.75rem; 
+    font-size: 0.975rem; 
+  }
+  .opt .letter { 
+    min-width: 34px; 
+    height: 34px; 
+    font-size: 1.1em; 
+  }
+  .btn-primary, button { 
+    padding: 0.625rem 0.875rem; 
+    font-size: 0.9rem; 
+  }
 }
 
 /* === TEMA CLARO DO CARD === */
