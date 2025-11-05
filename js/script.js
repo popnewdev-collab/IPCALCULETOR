@@ -17,7 +17,7 @@ function arraysEqual(a, b) {
 function showCorrectMessage() {
     const div = document.createElement('div');
     div.className = 'correct-message';
-    div.textContent = 'Acertou!';
+    div.textContent = 'Correct!';
     div.setAttribute('aria-live', 'assertive');
     document.body.appendChild(div);
     setTimeout(() => div.remove(), 1000);
@@ -167,7 +167,7 @@ function validateAnswer(selected) {
             expl.innerHTML = `<img src="${escapeHTML(current.image)}" alt="Explicação" style="max-width:100%; border-radius:0.5rem; margin:0.5rem 0;">`;
             if (current.explanation) expl.innerHTML += `<p style="margin-top:0.5rem;">${escapeHTML(current.explanation)}</p>`;
         } else {
-            expl.innerHTML = `<p>${escapeHTML(current.explanation || 'Sem explicação disponível.')}</p>`;
+            expl.innerHTML = `<p>${escapeHTML(current.explanation || 'No explanation available.')}</p>`;
         }
         setTimeout(() => {
             expl.scrollIntoView({ behavior: 'smooth', block: 'center' });
